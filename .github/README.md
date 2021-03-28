@@ -52,7 +52,7 @@ Tento konkrétní příklad kódu je napsán jako čtvrtletní projekt na IP. Pr
 ## Využité jazyky a balíčky
 
 ### Jazyky:
-* [PHP](https://www.php.net/)
+* [PHP 7.4.9](https://www.php.net/)
 * [HTML](https://www.w3schools.com/html/)
 * [SQL (MariaDB)](https://mariadb.org/)
 
