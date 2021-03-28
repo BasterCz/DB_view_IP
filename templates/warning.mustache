@@ -1,0 +1,16 @@
+<div class="alert alert-danger" role="alert">
+    {{#room}}
+    <p class="display-5">Opravdu si přejete smazat místnost {{name}}{{#no}} ({{.}}{{/no}})?</p>
+<p class="display-6"> Spolu s ní se smažou i následující osoby:</p>
+    <ul class="list-group">
+        {{#person}}
+        <li class="list-group-item"><a href="../employee/clovek?clovekId={{employee_id}}">{{surname}} {{firstname}}
+                <i>{{job}}</i></a></li>
+        {{/person}}
+    </ul>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-primary"><a href="mistnosti.php" class="alert-link">Zpět</a></button>
+        <button type="button" class="btn btn-danger"><a href="deleteMistnost.php?roomId={{room_id}}" class="alert-link">Smazat</a></button>
+    </div>
+    {{/room}}
+</div>

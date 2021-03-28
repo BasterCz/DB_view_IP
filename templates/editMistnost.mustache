@@ -1,0 +1,62 @@
+<form method="POST" action={{destination}}>
+    {{#errors}}
+    {{#room}}
+    <div class="form-group">
+        <p class="display-4">{{title}}</p>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="number" class="form-control" readonly id="id" value="{{room_id}}" name="id">
+        </div>
+        <div class="form-group">
+            <label for="no">Číslo místnosti</label>
+            {{#wrongNum}}
+            <input type="number" class="form-control is-invalid" id="no" value="{{no}}" name="no">
+            <div class="invalid-feedback">
+                {{#nullNum}}
+                Toto pole je povinné a musí mít správný formát. <i>Původní hodnota vrácena</i><br>
+                {{/nullNum}}
+                {{#invalidNum}}
+                Místnost s tímto číslem již existuje. <i>Původní hodnota vrácena</i><br>
+                {{/invalidNum}}
+            </div>
+            {{/wrongNum}}
+            {{^wrongNum}}
+            <input type="number" class="form-control" id="no" value="{{no}}" name="no">
+            {{/wrongNum}}
+        </div>
+        <div class="form-group">
+            <label for="name">Název</label>
+            {{#wrongName}}
+            <input type="text" class="form-control is-invalid" id="name" value="{{name}}" name="name">
+            <div class="invalid-feedback">
+                {{#nullName}}
+                Toto pole je povinné a musí mít správný formát. <i>Původní hodnota vrácena</i><br>
+                {{/nullName}}
+            </div>
+            {{/wrongName}}
+            {{^wrongName}}
+            <input type="text" class="form-control" id="name" value="{{name}}" name="name">
+            {{/wrongName}}
+        </div>
+        <div class="form-group">
+            <label for="phone">Telefon</label>
+            {{#wrongPhone}}
+            <input type="number" class="form-control is-invalid" id="phone" value="{{phone}}" name="phone">
+            <div class="invalid-feedback">
+                {{#nullPhone}}
+                Toto pole je povinné a musí mít správný formát. <i>Původní hodnota vrácena</i><br>
+                {{/nullPhone}}
+                {{#invalidPhone}}
+                Místnost s tímto telefonem již existuje. <i>Původní hodnota vrácena</i><br>
+                {{/invalidPhone}}
+            </div>
+            {{/wrongPhone}}
+            {{^wrongPhone}}
+            <input type="number" class="form-control" id="phone" value="{{phone}}" name="phone">
+            {{/wrongPhone}}
+        </div>
+        <button type="submit" class="btn btn-primary">Uložit</button>
+    </div>
+    {{/room}}
+    {{/errors}}
+</form>

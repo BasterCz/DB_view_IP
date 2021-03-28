@@ -1,0 +1,19 @@
+
+{{#person}}
+<h1>Detail osoby: {{firstname}} {{surname}}</h1>
+<dl class='dl-horizontal'>
+<dt>Jméno</dt><dd>{{firstname}}</dd>
+<dt>Příjmení</dt>
+<dd>{{surname}}</dd>
+<dt>Pozice</dt>
+<dd>{{job}}</dd>
+<dt>Mzda</dt>
+<dd>{{wage}}</dd>
+<dt>Mistnost</dt>
+<dd><a href='/pages/room/mistnost.php?roomId={{room}}'>{{name}}</a></dd>
+<dt>Klíče</dt>
+{{#keys}}
+    <dd><a href='/pages/room/mistnost.php?roomId={{roomid}}'> {{roomname}}</a></dd>
+{{/keys}}
+</dl>
+{{/person}}

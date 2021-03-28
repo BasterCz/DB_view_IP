@@ -1,0 +1,22 @@
+{{#mistnost}}
+<h1>Místnost č. {{no}}</h1>
+<dl class='dl-horizontal'>
+<dt>Číslo</dt><dd>{{no}}</dd>
+<dt>Název</dt>
+<dd>{{roomname}}</dd>
+<dt>Telefon</dt>
+<dd>{{phone}}</dd>
+<dt>Lidé</dt>
+{{#people}}
+    <dd><a href='/pages/employee/clovek.php?clovekId={{employee_id}}'>{{surname}} {{name}}</a></dd>
+{{/people}}
+{{#prumer}}
+<dt>Průměrná mzda</dt>
+<dd>{{prumer}}</dd>
+{{/prumer}}
+<dt>Klíče</dt>
+{{#keys}}
+    <dd><a href='/pages/employee/clovek.php?clovekId={{employee_id}}'>{{surname}} {{name}}</a></dd>
+{{/keys}}
+</dl>
+{{/mistnost}}

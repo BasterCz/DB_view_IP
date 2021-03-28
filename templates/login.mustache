@@ -1,0 +1,43 @@
+<div class="container">
+    <h1 class="display-3">
+        Log in
+    </h1>
+    <form method="POST" action="loggedIn.php">
+        <div class="form-group">
+        {{#errors}}
+            <p class="display-4">Přihlášení</p>
+            <div class="form-group">
+                <label for="oldPass">Login email</label>
+                {{#mailWrong}}
+                <input type="email" class="form-control is-invalid" id="email" placeholder="name@example.com"
+                    name="email" value={{emailValue}}>
+                <div class="invalid-feedback">
+                    {{#mailEmpty}}Toto pole je povinné.<br>{{/mailEmpty}}
+                    {{#mailSomehowWrong}}Email neodpovída žádnému účtu.{{/mailSomehowWrong}}
+                </div>
+                {{/mailWrong}}
+                {{^mailWrong}}
+                <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email"
+                    value={{emailValue}}>
+                {{/mailWrong}}
+
+            </div>
+            <div class="form-group">
+                <label for="pass">Heslo</label>
+                {{#passWrong}}
+                <input type="password" class="form-control is-invalid" id="newPass" placeholder="password" name="pass">
+                <div class="invalid-feedback">
+                    {{#passNo}}Heslo není správně<br>{{/passNo}}
+                </div>
+                {{/passWrong}}
+                {{^passWrong}}
+                <input type="password" class="form-control" id="newPass" placeholder="password" name="pass">
+                {{/passWrong}}
+
+            </div>
+            <button type="submit" class="btn btn-primary">Log in</button>
+        {{/errors}}
+        </div>
+
+    </form>
+</div>

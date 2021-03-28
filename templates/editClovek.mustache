@@ -1,0 +1,146 @@
+<form method="POST" action={{destination}}>
+    {{#errors}}
+    {{#profile}}
+    <div class="form-group">
+        <p class="display-4">{{title}}</p>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="number" class="form-control" readonly id="id" value="{{employee_id}}" name="id">
+        </div>
+        <div class="form-group">
+            <label for="name">Jméno</label>
+
+            {{#wrongName}}
+            <input type="text" class="form-control is-invalid" id="name" value="{{name}}" name="name">
+            <div class="invalid-feedback">
+                {{#nullName}}
+                Toto pole je povinné a musí mít správný formát. <i>Původní hodnota vrácena</i><br>
+                {{/nullName}}
+            </div>
+            {{/wrongName}}
+            {{^wrongName}}
+            <input type="text" class="form-control" id="name" value="{{name}}" name="name">
+            {{/wrongName}}
+        </div>
+        <div class="form-group">
+            <label for="surname">Příjmení</label>
+
+            {{#wrongSurname}}
+            <input type="text" class="form-control is-invalid" id="surname" value="{{surname}}" name="surname">
+            <div class="invalid-feedback">
+                {{#nullSurname}}
+                Toto pole je povinné a musí mít správný formát. <i>Původní hodnota vrácena</i><br>
+                {{/nullSurname}}
+            </div>
+            {{/wrongSurname}}
+            {{^wrongSurname}}
+            <input type="text" class="form-control" id="surname" value="{{surname}}" name="surname">
+            {{/wrongSurname}}
+        </div>
+        <div class="form-group">
+            <label for="job">Pozice</label>
+            {{#wrongJob}}
+            <input type="text" class="form-control is-invalid" id="job" value="{{job}}" name="job">
+            <div class="invalid-feedback">
+                {{#nullJob}}
+                Toto pole je povinné a musí mít správný formát. <i>Původní hodnota vrácena</i><br>
+                {{/nullJob}}
+            </div>
+            {{/wrongJob}}
+            {{^wrongJob}}
+            <input type="text" class="form-control" id="job" value="{{job}}" name="job">
+            {{/wrongJob}}
+        </div>
+        <div class="form-group">
+            <label for="wage">Plat</label>
+
+            {{#wrongWage}}
+            <input type="number" class="form-control is-invalid" id="wage" value="{{wage}}" name="wage">
+            <div class="invalid-feedback">
+                {{#nullWage}}
+                Toto pole je povinné a musí mít správný formát. <i>Původní hodnota vrácena</i><br>
+                {{/nullWage}}
+            </div>
+            {{/wrongWage}}
+            {{^wrongWage}}
+            <input type="number" class="form-control" id="wage" value="{{wage}}" name="wage">
+            {{/wrongWage}}
+        </div>
+        <div class="form-group">
+            <label for="room">Domovská místnost</label>
+
+            {{#wrongRoom}}
+            <select class="form-control is-invalid" id="room" name="room">
+                {{#keys}}
+                    {{#selected}}
+                    <option value={{roomId}} selected>{{roomName}}</option>
+                    {{/selected}}
+                    {{^selected}}
+                    <option value={{roomId}}>{{roomName}}</option>
+                    {{/selected}}
+                {{/keys}}
+            </select>
+            <div class="invalid-feedback">
+                {{#nullRoom}}
+                Toto pole je povinné a musí mít správný formát. <i>Původní hodnota vrácena</i><br>
+                {{/nullRoom}}
+                {{#invalidRoom}}
+                Místnost s tímto ID neexistuje. <i>Původní hodnota vrácena</i><br>
+                {{/invalidRoom}}
+            </div>
+            {{/wrongRoom}}
+            {{^wrongRoom}}
+            <select class="form-control" id="room" name="room">
+                {{#keys}}
+                    {{#selected}}
+                    <option value={{roomId}} selected>{{roomName}}</option>
+                    {{/selected}}
+                    {{^selected}}
+                    <option value={{roomId}}>{{roomName}}</option>
+                    {{/selected}}
+                {{/keys}}
+            </select>
+            {{/wrongRoom}}
+        </div>
+        <div class="form-group">
+            <label for="login">Přihlašovací mail</label>
+
+            {{#wrongLogin}}
+            <input type="email" class="form-control is-invalid" id="login" value="{{login}}" name="login">
+            <div class="invalid-feedback">
+                {{#nullLogin}}
+                Toto pole je povinné a musí mít správný formát. <i>Původní hodnota vrácena</i><br>
+                {{/nullLogin}}
+                {{#sameLogin}}
+                Přihlašovací mail již existuje. <i>Původní hodnota vrácena</i><br>
+                {{/sameLogin}}
+            </div>
+            {{/wrongLogin}}
+            {{^wrongLogin}}
+            <input type="email" class="form-control" id="login" value="{{login}}" name="login">
+            {{/wrongLogin}}
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+
+                {{#admin}}<input type="checkbox" id="admin" checked name="admin">{{/admin}}
+                {{^admin}}<input type="checkbox" id="admin" name="admin">{{/admin}}
+                <label class="form-check-label" for="admin">Admin</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <p class="display-4">Klíče</p>
+            {{#keys}}
+            <div class="form-check">
+
+                {{#iHaveKey}}<input type="checkbox" name="keyList[]" id="key-{{roomId}}" checked value="{{roomId}}">{{/iHaveKey}}
+                {{^iHaveKey}}<input type="checkbox" name="keyList[]" id="key-{{roomId}}" value="{{roomId}}">{{/iHaveKey}}
+                <label class="form-check-label" for="key-{{roomId}}">{{roomName}} ({{roomNo}})</label>
+            </div>
+            {{/keys}}
+        </div>
+        <button type="submit" class="btn btn-primary">Uložit</button>
+    </div>
+    {{/profile}}
+    {{/errors}}
+</form>

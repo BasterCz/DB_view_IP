@@ -1,0 +1,4 @@
+/vendor/
+/includes/LocalConfig.class_example.php
+/_includes/db.phps
+/.vscode/
