@@ -2,7 +2,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/BasterCz/Composer_Projekt">
+  <a href="https://github.com/BasterCz/DB_view_IP">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -13,9 +13,9 @@
     <br />
     <a href="http://a2018bartbo.delta-www.cz/">Zobrazit demo</a>
     ·
-    <a href="https://github.com/BasterCz/Composer_Projekt/issues">Nahlásit chybu</a>
+    <a href="https://github.com/BasterCz/DB_view_IP/issues">Nahlásit chybu</a>
     ·
-    <a href="https://github.com/BasterCz/Composer_Projekt/issues">Vyžádat funkci</a>
+    <a href="https://github.com/BasterCz/DB_view_IP/issues">Vyžádat funkci</a>
   </p>
 </p>
 
