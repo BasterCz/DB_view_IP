@@ -59,9 +59,9 @@ else {
         //profilace
         $profile = new ProfileMistnost(
             $row['room_id'],
-            $row['no'],
+            (int)$row['no'],
             $row['name'],
-            $row['phone'] ?? 0,
+            (int)$row['phone'] ?? 0,
         );
         
         //update

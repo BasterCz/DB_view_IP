@@ -37,7 +37,7 @@ class ProfileMistnost
 
             $pdo = dbConnect();
             
-            $no_ = $_POST['no'];
+            $no_ = (int)$_POST['no'];
             if (empty($no_)) {
                 $errorList->isActiveChange("wrongNum", true);
                 $errorList->isActiveChange("nullNum", true);
@@ -60,7 +60,7 @@ class ProfileMistnost
             } else {
                 $this->name = filter_var($name_, FILTER_SANITIZE_STRING);
             }
-            $phone_ = $_POST['phone'];
+            $phone_ = (int)$_POST['phone'];
             if (empty($phone_)) {
                 $errorList->isActiveChange("wrongPhone", true);
                 $errorList->isActiveChange("nullPhone", true);
