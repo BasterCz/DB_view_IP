@@ -75,7 +75,7 @@ else {
     if ($loggedIn && $admin) {
 
         //profilace
-        $profile = new ProfileClovek(
+        $profile = new ProfileClovek( 
             (int)$row['employee_id'],
             $row['firstname'],
             $row['surname'],
