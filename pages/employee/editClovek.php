@@ -76,12 +76,12 @@ else {
 
         //profilace
         $profile = new ProfileClovek(
-            $row['employee_id'],
+            (int)$row['employee_id'],
             $row['firstname'],
             $row['surname'],
             $row['job'],
-            $row['wage'],
-            $row['room'],
+            (int)$row['wage'],
+            (int)$row['room'],
             $row['login'],
             $row['admin'] === 1 ? true : false
         );

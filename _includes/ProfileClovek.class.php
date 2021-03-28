@@ -67,14 +67,14 @@ class ProfileClovek
             } else {
                 $this->job = filter_var($job_, FILTER_SANITIZE_STRING);
             }
-            $wage_ = $_POST['wage'];
+            $wage_ = (int)$_POST['wage'];
             if (empty($wage_)) {
                 $errorList->isActiveChange("wrongWage", true);
                 $errorList->isActiveChange("nullWage", true);
             } else {
                 $this->wage = filter_var($wage_, FILTER_VALIDATE_INT);
             }
-            $room_ = $_POST['room'];
+            $room_ = (int)$_POST['room'];
             if (empty($room_)) {
                 $errorList->isActiveChange("wrongRoom", true);
                 $errorList->isActiveChange("nullRoom", true);
